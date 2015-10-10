@@ -1,3 +1,3 @@
 # OSSU UI
 
-**Open Source Society client-side application**
+**Open Source Society University client-side application**
