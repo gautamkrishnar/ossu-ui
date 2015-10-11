@@ -14,5 +14,12 @@
   "bugs": {
     "url": "https://github.com/open-source-society/ossu-ui/issues"
   },
-  "homepage": "https://github.com/open-source-society/ossu-ui#readme"
+  "homepage": "https://github.com/open-source-society/ossu-ui#readme",
+  "devDependencies": {
+    "semistandard": "^7.0.2"
+  },
+  "scripts": {
+    "test": "semistandard",
+    "check-style": "semistandard || true"
+  }
 }
