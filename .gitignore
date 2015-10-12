@@ -2,9 +2,12 @@
 .AppleDouble
 .LSOverride
 jsconfig.json
+tsd.json
+
 
 # Node modules folder
 node_modules/
+typings/
 
 # compiled modules
 bundle.js
