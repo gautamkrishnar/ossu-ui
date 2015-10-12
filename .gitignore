@@ -1,6 +1,11 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+jsconfig.json
 
 # Node modules folder
 node_modules/
+
+# compiled modules
+bundle.js
+
