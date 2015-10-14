@@ -3,12 +3,80 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Hello React!</title>
+  <link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.css">
+  <title>OSSU</title>
+
+  <style type="text/css">
+  body {
+    background-color: #D8E7F2;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .ui.inverted.segment {
+    background-color: #3498db
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .navBar.ui.inverted.menu {
+    background: #042F86
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  .masthead h1.ui.header {
+    margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+  }
+  .masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+  }
+  .masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+  }
+  .ui.vertical.stripe {
+    padding: 8em 0em;
+  }
+  .ui.vertical.stripe h3 {
+    font-size: 2em;
+  }
+  .ui.vertical.stripe .button + h3,
+  .ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+  }
+  .ui.vertical.stripe .floated.image {
+    clear: both;
+  }
+  .ui.vertical.stripe p {
+    font-size: 1.33em;
+  }
+  .ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+  }
+
+  .quote.stripe.segment {
+    padding: 0em;
+  }
+  .quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+  </style>
+
 </head>
 
 <body>
-  <div id="example"></div>
-  <script src="bundle.js"></script>
+  <div id="app"></div>
+  <script src='bundle.js'></script>
 </body>
 
 </html>

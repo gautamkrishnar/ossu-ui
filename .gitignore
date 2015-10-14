@@ -3,11 +3,13 @@
 .LSOverride
 jsconfig.json
 tsd.json
+.eslintrc
 
 
-# Node modules folder
+# Folders
 node_modules/
 typings/
+semantic/
 
 # compiled modules
 bundle.js
