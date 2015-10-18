@@ -11,6 +11,7 @@ node_modules/
 typings/
 public/semantic/tasks
 public/semantic/src
+public/semantic/dist
 
 # compiled modules
 bundle.js
