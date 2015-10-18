@@ -9,8 +9,8 @@ tsd.json
 # Folders
 node_modules/
 typings/
-semantic/
+public/semantic/tasks
+public/semantic/src
 
 # compiled modules
 bundle.js
-

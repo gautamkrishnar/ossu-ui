@@ -1,0 +1,53 @@
+@waterloosunset: I looked into this last night. It will work different than that because we are not using the MVC pattern.
+
+The front end will call `GET auth/register`
+The backend will return with an array of registration strategies.
+In the github strategy, the object will look something like this
+```strategy = {
+name: github
+authorize_url: 'https://github.com/login/oauth/authorize',
+client_id: 'XXXXXXXX',
+auth_scope: 'user/email'
+callback: 'auth/github/callback'
+}
+```
+
+1) The app (the website, the OSS-UI) must make a request to `strategy.authorize_url` with this payload: `{ client_id: strategy.client_id, scope: strategy.auth_scope }`
+2) That request will send users to github, where they will authorize the website
+3) Github will return the users to the website with a `code`
+4) The website must make an ajax request to the `strategy.callback` url with the `code` in the payload
+5) The api will retreive the access token using the code and log the user in.
+6) The response to `strategy.callback` will indicate if the user is authorized or if there is an error.  At this point, if all goes well, the user will be 'logged in'
+
+oscarg [10:34 AM]
+The strategy is essentially this: https://developer.github.com/v3/oauth/
+
+However, the website (OSS-UI) has to communicate with the github api and the OSS-API server...so it's just a little more tricky.
+
+oscarg [10:37 AM]
+@waterloosunset: let me know if that makes sense
+
+oscarg [10:38 AM]
+when we implement bitbucket, the `strategy` object will look similar
+```strategy = {
+name: gitbucket
+authorize_url: 'https://gitbucket/path/to/oauth/authorize',
+client_id: 'XXXXXXXX',
+callback: 'auth/gitbucket/callback'
+}
+```
+
+waterloosunset [10:40 AM] 
+the response to strategy.callback will return a user object if the user is already registered, and return an error if they aren't?
+
+oscarg [10:47 AM] 
+strategy.callback will return the user object only if:
+* The oAuth authorization was successful (github gives us an access token)
+
+It will return an error if:
+* The user did not approve the oAuth request
+* There was an error retrieving the token
+
+I think the user object will already include all of the user info we can get from github.
+
+This api is not creating user accounts in the traditional sense (user and password)...it just links a website visitor with the github account.  The api will set a cookie and the website will know that the user's session is authorized. When the user comes back to the website, they should be able to click the 'login with github button' and the api will log them in (I'm still working out the details of returning visitors)

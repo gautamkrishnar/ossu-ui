@@ -1,0 +1,13 @@
+extends layout
+
+block content 
+  if errorMsg !== undefined  
+    h1 #{errorMsg}: Please Try Again
+  if loginMsg !== undefined
+    h1 #{loginMsg} #{strategy}!
+  if script !== undefined
+    script(src=script)
+  #app
+    script(src='/javascript/bundle.js')
+
+
