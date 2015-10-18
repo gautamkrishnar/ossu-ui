@@ -2,8 +2,27 @@
 
 let React = require('react');
 let ReactDOM = require('react-dom');
+let Reqwest = require('reqwest');
 
 class App extends React.Component {
+  constructor (props) {
+    super(props);
+  }
+
+  readFromAPI (url, callback) {
+    Reqwest({
+      url: url,
+      type: 'json',
+      method: 'get',
+      contentType: 'application/json',
+      headers: {'Authorization': localStorage.getItem('jwt')},
+      success: callback,
+      error: (error) => {
+        console.error(url, error['response']);
+      }
+    });
+  }
+
   render () {
     return (
       <div className='app'>
@@ -50,6 +69,10 @@ class NavButton extends React.Component {
 }
 
 class BodyContent extends React.Component {
+  
+
+
+
   render () {
     return (
       <div className='bodyContent'>
