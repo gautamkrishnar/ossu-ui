@@ -7,12 +7,9 @@ html
     title= title
   body
     if errorMsg !== undefined 
-
-        h1 __
+        h1(class='flash') __
     if loginMsg !== undefined
-        h1 __
-    if script !== undefined
-      script(src=script)
+        h1(class='flash') __
     block content
 
 

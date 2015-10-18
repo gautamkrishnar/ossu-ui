@@ -16,7 +16,7 @@
       xhttp.open('POST', 'https://ossu.io/api/auth/github/callback', true);
       xhttp.timeout = 5000;
       xhttp.ontimeout = function() {
-      	window.location.href = '/error?err=timeout';
+      	window.location.href = '/error?err=timeout&script=clearError';
       }
       xhttp.send(code);
       xhttp.onreadystatechange = function(xhttp) {

@@ -2,9 +2,9 @@ extends layout
 
 block content 
   if errorMsg !== undefined  
-    h1 #{errorMsg}: Please Try Again
+    h1(class='flash') #{errorMsg}: Please Try Again
   if loginMsg !== undefined
-    h1 #{loginMsg} #{strategy}!
+    h1(class='flash') #{loginMsg} #{strategy}!
   if script !== undefined
     script(src=script)
   #app

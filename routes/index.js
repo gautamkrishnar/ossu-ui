@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 /*Render Homepage with an error message*/
 router.get('/error', function(req, res) {
-  res.render('index', { errorMsg: req.query.err, title: 'OSS-Uh Oh' } );
+  res.render('index', { errorMsg: req.query.err, title: 'OSS-Uh Oh', script: '/javascript/' + req.query.script + '.js' } );
 });
 
 /*Render the view with a Github Login message and ajax request*/

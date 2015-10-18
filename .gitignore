@@ -4,7 +4,7 @@
 jsconfig.json
 tsd.json
 .eslintrc
-
+nom-debug.log
 
 # Folders
 node_modules/
