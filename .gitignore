@@ -4,11 +4,9 @@
 jsconfig.json
 tsd.json
 .eslintrc
-datamodel.js
-
 
 # Because I am a code hoarder
-oldjunk.js
+personal/
 
 
 
