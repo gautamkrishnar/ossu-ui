@@ -10,7 +10,7 @@ module.exports = {
   devtool: "#inline-source-map",
   module: {
     loaders: [
-      { test: /\.js?$/, exclude: '/node_modules/', loader: 'babel?cacheDirectory' },
+      { test: /\.js?$/, exclude: '/node_modules/', loader: 'babel-loader' },
       { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
       { test: /\.css$/, loader: 'style!css' }
     ]
@@ -25,15 +25,14 @@ module.exports = {
         semicolons: true
       },
       sourceMap: true
-    })//,
+    })
+  // ,
   //   new webpack.SourceMapDevToolPlugin({
   //   // asset matching
-    
   //   // file and reference
   //   append: true,
 
   //   // sources naming
-   
 
   //   // quality/performance
   //   module: true,

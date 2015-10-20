@@ -1,16 +1,25 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from '../action.js';
 import Reqwest from 'reqwest';
 import {BodyContent} from './BodyContent.js';
 import {NavBar} from './NavBar.js';
+import {
+  fetchAuthStrategiesIfNeeded, fetchCurriculumIfNeeded,
+  showRedirectModal, hideRedirectModal
+} from '../actions/action.js';
 
 export class App extends React.Component {
   constructor (props) {
     super(props);
   }
 
-  readFromAPI (url, callback) {
+  componentDidMount () {
+    const {dispatch} = this.props;
+    dispatch(fetchAuthStrategiesIfNeeded());
+    dispatch(fetchCurriculumIfNeeded('cs'));
+  }
+
+  /* readFromAPI (url, callback) {
     Reqwest({
       url: url,
       type: 'json',
@@ -20,7 +29,7 @@ export class App extends React.Component {
       success: callback,
       error: error => { console.error(url, error['response']); }
     });
-  }
+  }*/
 
   writeToAPI (method, url, data, callback) {
     Reqwest({
@@ -29,7 +38,7 @@ export class App extends React.Component {
       type: 'json',
       method: method,
       contentType: 'application/json',
-      headers: {'Authorization': localStorage.getItem('jwt')},
+      headers: {'Authorization': window.localStorage.getItem('jwt')},
       success: callback,
       error: error => { console.error(url, error['response']); }
     });
@@ -37,22 +46,23 @@ export class App extends React.Component {
 
   storeJWT (jwt) {
     if (jwt !== undefined) {
-      localStorage.setItem('jwt', jwt);
+      window.localStorage.setItem('jwt', jwt);
     }
   }
 
   render () {
-    const {...other } = this.props;
-    console.log(NavBar);
+    const {dispatch, ...other } = this.props;
+    // console.log(NavBar);
     return (
       <div className='app'>
         <NavBar
           {...other}
-          readFromAPI={this.readFromAPI}
+          onLoginClick={data => dispatch(showRedirectModal(data))}
+          onCheckClick={() => dispatch(hideRedirectModal())}
           writeToAPI={this.writeToAPI}
           storJWT={this.storeJWT}
         />
-        <BodyContent 
+        <BodyContent
           {...other}
           readFromAPI={this.readFromAPI}
           writeToAPI={this.writeToAPI}
@@ -62,21 +72,11 @@ export class App extends React.Component {
   }
 }
 
-
-
-function selectTodos(todos, filter) {
-  switch (filter) {
-  default:
-    return '';
-  }
-}
-
 // Which props do we want to inject, given the global state?
 // Note: use https://github.com/faassen/reselect for better performance.
-function select(state) {
+function select (state) {
   return {
-    visibleTodos: selectTodos(state.todos, state.visibilityFilter),
-    visibilityFilter: state.visibilityFilter
+    state
   };
 }
 

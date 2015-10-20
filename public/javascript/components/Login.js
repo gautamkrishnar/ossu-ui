@@ -8,18 +8,18 @@ export class Login extends React.Component {
     super(props);
   }
 
-  componentDidMount () {
+  /* componentDidMount () {
     this.getAuthStrategyFromAPI();
-  }
+  }*/
 
-  getAuthStrategyFromAPI () {
+  /* getAuthStrategyFromAPI () {
     this.props.readFromAPI(this.props.API + '/auth', (strategy) => {
       this.props.addAuthStrategy(strategy); // redux method for set state.
     });
-  }
+  }*/
 
   isLoggedIn () {
-    if (localStorage.getItem('jwt')) {
+    if (window.localStorage.getItem('jwt')) {
       return 'logout';
     } else {
       return 'login';
@@ -27,11 +27,11 @@ export class Login extends React.Component {
   }
 
   handleLogInOut () {
-    if (localStorage.getItem('jwt')) {
-      localStorage.removeItem('jwt');
+    if (window.localStorage.getItem('jwt')) {
+      window.localStorage.removeItem('jwt');
       return '/';
     } else {
-      return this.assembleAuthUri();
+      //this.props.onLoginClick(this.props.authStrategies.strategies[0]);
     }
   }
 
@@ -46,7 +46,7 @@ export class Login extends React.Component {
 
   render () {
     return (
-        <a href={this.handleLogInOut()} className={this.calculateStyleClasses()}>{this.isLoggedIn()}</a>
+        <a onClick={this.handleLogInOut()} className={this.calculateStyleClasses()}>{this.isLoggedIn()}</a>
     );
   }
 }

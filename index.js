@@ -1,21 +1,17 @@
 /* eslint-env es6 */
 
+import 'babel-core/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './public/javascript/components/App.js';
-import ossuApp from './public/javascript/reducers/reducers.js';
+import configureStore from './public/javascript/store/configureStore.js';
 
-
-let store = createStore(ossuApp);
-
-
-
+let store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('root')
 );
