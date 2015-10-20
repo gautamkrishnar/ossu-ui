@@ -14,3 +14,4 @@
   ```bash
   npm install
   ```
+1. When semantic install follow defaults except install in `public/semantic/`
