@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/semantic/dist/semantic.css')
+    link(rel='stylesheet', href='/semantic/dist/main.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    title= title
+  body
+    if errorMsg !== undefined 
+        h1(class='flash') __
+    if loginMsg !== undefined
+        h1(class='flash') __
+    block content
+
+
+script(src='/javascript/animations.js')

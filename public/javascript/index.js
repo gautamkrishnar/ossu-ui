@@ -29,25 +29,11 @@ class NavBar extends React.Component {
   }
 }
 
-class Auth extends React.Component {
-  constructAuthUrl (strategy) {
-    return strategy.authorize_url + '?client_id=' + strategy.client_id +
-      '&redirect_uri=http://ossu.io/auth/' + strategy.name + '/authorize' +
-      '&scope=' + strategy.auth_scope;
-  }
-
-  render () {
-    return (
-      <a href={this.constructAuthUrl(this.state.strategy)} className='navButton item pull right'>Login</a>
-    );
-  }
-}
-
 class NavLogo extends React.Component {
   render () {
     return (
       <div href='#' className='navLogo header item'>
-        <img className='logo' src='./favicons/favicon-32x32.png' />
+        <img className='logo' src='../favicons/favicon-32x32.png' />
         OSSU
       </div>
     );
@@ -59,6 +45,37 @@ class NavButton extends React.Component {
     return (
       <a href='#' className='navButton item'>
         A Button!
+      </a>
+    );
+  }
+}
+
+
+class Auth extends React.Component {
+  constructor() {
+    super();
+    this.state = { 
+      strategy: { 
+        name: 'github',
+        authorize_url: 'https://github.com/login/oauth/authorize',
+        client_id: 'XXXXXXXX',
+        auth_scope: 'user:email',
+        callback: 'auth/github/callback'
+      }
+    }
+  }
+
+
+  constructAuthUrl(strategy) {
+    return strategy.authorize_url + '?client_id=' + strategy.client_id +
+      '&redirect_uri=http://ossu.io/login/' + strategy.name + '/authorize' +
+      '&scope=' + strategy.auth_scope;
+  }
+
+  render () {
+    return (
+      <a href= {this.constructAuthUrl(this.state.strategy)} className='item pull right'> 
+        Login or Sign Up with {this.state.strategy.name}!
       </a>
     );
   }
@@ -88,7 +105,7 @@ class Masthead extends React.Component {
           <h1 className='ui inverted header'> OSSU </h1>
         </div>
         <div className='ui text container'>
-          <h2> Learn Amazing things Here! </h2>
+          <h2> Learn Amazing things Here! Is this layout repobsive to window size in any way? </h2>
         </div>
       </div>
     );

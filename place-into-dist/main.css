@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.css">
-  <title>OSSU</title>
-
-  <style type="text/css">
-  body {
+body {
     background-color: #D8E7F2;
   }
   .ui.menu .item img.logo {
@@ -29,11 +20,27 @@
     margin: 5em 0em 0em;
     padding: 5em 0em;
   }
+
   .masthead h1.ui.header {
+    margin-top: -1.28em;
+    margin-bottom: 0em;
+    font-size: 6em;
+    font-weight: bold;
+    font-family: Questrial; 
+  }
+  .masthead h1.ui.header.loaded {
+    transition: margin 0.7s;
+    margin-top: -1.32em;
+    margin-bottom: 0.04em;
+}
+  .masthead h1.ui.header.shadow {
     margin-top: 3em;
     margin-bottom: 0em;
-    font-size: 4em;
-    font-weight: normal;
+    font-size: 6em;
+    font-weight: bold;
+    font-family: Questrial;
+    color: #20124d;
+   
   }
   .masthead h2 {
     font-size: 1.7em;
@@ -70,13 +77,3 @@
     padding-top: 5em;
     padding-bottom: 5em;
   }
-  </style>
-
-</head>
-
-<body>
-  <div id="app"></div>
-  <script src='bundle.js'></script>
-</body>
-
-</html>
