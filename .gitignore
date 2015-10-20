@@ -1,6 +1,20 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+jsconfig.json
+tsd.json
+.eslintrc
 
-# Node modules folder
+# Because I am a code hoarder
+personal/
+
+
+
+# Folders
 node_modules/
+typings/
+semantic/
+
+# compiled modules
+bundle.js
+
