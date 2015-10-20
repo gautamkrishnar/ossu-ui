@@ -14,8 +14,12 @@ export class NavBar extends React.Component {
       <div className='navBar ui fixed inverted menu'>
         <div className='ui container'>
           <NavLogo />
-          <NavButton />
-          <NavButton />
+          <NavButton 
+            {...other}
+          />
+          <NavButton 
+            {...other}
+          />
           <Login 
             {...other}
           />
