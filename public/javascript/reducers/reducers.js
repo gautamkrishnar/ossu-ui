@@ -3,7 +3,9 @@ import {
   SHOW_REDIRECT_MODAL, HIDE_REDIRECT_MODAL,
   REQUEST_CURRICULUM, RECEIVE_CURRICULUM,
   INVALIDATE_CURRICULUM, RECEIVE_AUTH_STRATEGIES,
-  SELECT_CURRICULUM, REQUEST_AUTH_STRATEGIES
+  SELECT_CURRICULUM, REQUEST_AUTH_STRATEGIES,
+  REQUEST_USER_INFO, RECEIVE_USER_INFO,
+  INVALIDATE_USER_INFO, LOG_USER_IN, LOG_USER_OUT
 } from '../actions/action.js';
 
 const initialState = {
@@ -11,8 +13,11 @@ const initialState = {
   authStrategies: {},
   selectedCurriculum: 'cs',
   curriculumList: {},
-  redirectModal: {
-    hidden: true
+  uiState: {
+    isLoggedin: false,
+    redirectModal: {
+      hidden: true
+    }
   }
 };
 
@@ -24,7 +29,7 @@ function selectedCurriculum (state = initialState.selectedCurriculum, action) {
       return state;
   }
 }
-function redirectModal (state = initialState.redirectModal, action) {
+/* function redirectModal (state = initialState.redirectModal, action) {
   switch (action.type) {
     case SHOW_REDIRECT_MODAL:
       return action.data;
@@ -33,9 +38,26 @@ function redirectModal (state = initialState.redirectModal, action) {
     default:
       return state;
   }
-}
+}*/
 function userInfo (state = initialState.userInfo, action) {
   switch (action.type) {
+    case REQUEST_USER_INFO:
+      return Object.assign({}, state, {
+        isFetching: true,
+        didInvalidate: false
+      });
+    case RECEIVE_USER_INFO:
+      return Object.assign({}, state, {
+        isFetching: false,
+        didInvalidate: false,
+        userName: action.json.userName,
+        // etc whatever needs to be imported.
+        lastUpdated: action.receivedAt
+      });
+    case INVALIDATE_USER_INFO:
+      return Object.assign({}, state, {
+        didInvalidate: true
+      });
     default:
       return state;
   }
@@ -89,9 +111,35 @@ function curriculumList (state = initialState.curriculumList, action) {
       return state;
   }
 }
+function uiState (state = initialState.uiState, action) {
+  switch (action.type) {
+    case LOG_USER_IN:
+      return Object.assign({}, state, {
+        isLoggedin: true
+      });
+    case LOG_USER_OUT:
+      return Object.assign({}, state, {
+        isLoggedin: false
+      });
+    case SHOW_REDIRECT_MODAL:
+      return Object.assign({}, state, {
+        redirectModal: {
+          url: action.url,
+          message: action.message,
+          img: action.img
+        }
+      });
+    case HIDE_REDIRECT_MODAL:
+      return Object.assign({}, state, {
+        redirecModal: {hidden: true}
+      });
+    default:
+      return state;
+  }
+}
 
 const rootReducer = combineReducers({
-  redirectModal,
+  uiState,
   authStrategies,
   userInfo,
   curriculumList,
