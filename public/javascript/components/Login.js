@@ -31,7 +31,7 @@ export class Login extends React.Component {
       window.localStorage.removeItem('jwt');
       return '/';
     } else {
-      //this.props.onLoginClick(this.props.authStrategies.strategies[0]);
+      // this.props.onLoginClick(this.props.authStrategies.strategies[0]);
     }
   }
 

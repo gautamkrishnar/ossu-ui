@@ -6,7 +6,7 @@ export class NavButton extends React.Component {
   }
 
   handleClick () {
-    console.log(this.props);
+    // console.log(this.props);
     return this.props.onCheckClick;
   }
 

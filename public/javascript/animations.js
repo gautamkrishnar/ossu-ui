@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  setTimeout(shadow, 100);
+  setTimeout(shadow, 1000);
 });
 
 function shadow() {

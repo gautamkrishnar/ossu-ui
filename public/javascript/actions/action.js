@@ -117,7 +117,7 @@ function fetchCurriculum (curriculum) {
 function shouldFetchCurriculum (state, curriculum) {
   const courses = state.curriculumList[curriculum];
   if (!courses) {
-    console.log('I am doing something');
+    //console.log('I am doing something');
     return true;
   }
   if (courses.isFetching) {
