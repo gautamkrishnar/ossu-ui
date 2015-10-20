@@ -131,7 +131,7 @@ function uiState (state = initialState.uiState, action) {
       });
     case HIDE_REDIRECT_MODAL:
       return Object.assign({}, state, {
-        redirecModal: {hidden: true}
+        redirectModal: {hidden: true}
       });
     default:
       return state;
