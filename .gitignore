@@ -5,6 +5,10 @@ jsconfig.json
 tsd.json
 .eslintrc
 
+# Because I am a code hoarder
+personal/
+
+
 
 # Folders
 node_modules/
