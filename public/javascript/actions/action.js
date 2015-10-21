@@ -31,7 +31,7 @@ export const LOG_USER_OUT = 'LOG_USER_OUT';
 
 function requestAuthStrategies () {
   return {
-    type: REQUEST_AUTH_STRATEGIES,
+    type: REQUEST_AUTH_STRATEGIES
   };
 }
 function receiveAuthStrategies (stratArray) {
@@ -126,7 +126,7 @@ function fetchCurriculum (curriculum) {
 function shouldFetchCurriculum (state, curriculum) {
   const courses = state.curriculumList[curriculum];
   if (!courses) {
-    //console.log('I am doing something');
+    // console.log('I am doing something');
     return true;
   }
   if (courses.isFetching) {

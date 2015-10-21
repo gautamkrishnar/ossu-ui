@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 export class NavButton extends React.Component {
   constructor (props) {
@@ -18,3 +18,7 @@ export class NavButton extends React.Component {
     );
   }
 }
+
+NavButton.propTypes = {
+  onCheckClick: PropTypes.func.isRequired
+};

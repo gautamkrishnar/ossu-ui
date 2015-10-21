@@ -1,15 +1,15 @@
 /* eslint-env es6 */
 
-import { React } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Uri } from 'jsuri';
 
-export class Authorize extends React.Component {
+export class Authorize extends Component {
   constructor (props) {
     super(props);
   }
 
   componentWillMount () {
-    this.props.setLoginPayloadInState(new Uri(location.search).getQueryParamValue('code'));
+    this.props.setLoginPayloadInState(new Uri(window.location.search).getQueryParamValue('code'));
   }
 
   componentDidMount () {
@@ -24,10 +24,21 @@ export class Authorize extends React.Component {
   }
 
   render () {
-    <div className='ui inverted center aligned'>
-      <div className='ui text container'>
-        <h1 className='ui inverted header flash'>Attempting to log you in</h1>
+    return (
+      <div className='ui inverted center aligned'>
+        <div className='ui text container'>
+          <h1 className='ui inverted header flash'>Attempting to log you in</h1>
+        </div>
       </div>
-    </div>
+    );
   }
 }
+
+Authorize.propTypes = {
+  setLoginPayloadInState: PropTypes.func,
+  writeToAPI: PropTypes.func,
+  storeJWT: PropTypes.func,
+  API: PropTypes.string.isRequired,
+  strategy: PropTypes.object.isRequired,
+  loginPayload: PropTypes.sting.isRequired
+};

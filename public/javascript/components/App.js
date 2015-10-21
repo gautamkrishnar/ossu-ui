@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Reqwest from 'reqwest';
 import {BodyContent} from './BodyContent.js';
@@ -8,7 +8,7 @@ import {
   showRedirectModal, hideRedirectModal
 } from '../actions/action.js';
 
-export class App extends React.Component {
+export class App extends Component {
   constructor (props) {
     super(props);
   }
@@ -51,7 +51,7 @@ export class App extends React.Component {
   }
 
   render () {
-    const {dispatch, ...other } = this.props;
+    const { dispatch, ...other } = this.props;
     // console.log(NavBar);
     return (
       <div className='app'>
@@ -71,6 +71,11 @@ export class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired
+
+};
 
 // Which props do we want to inject, given the global state?
 // Note: use https://github.com/faassen/reselect for better performance.
