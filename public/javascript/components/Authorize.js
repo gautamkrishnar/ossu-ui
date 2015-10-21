@@ -40,5 +40,5 @@ Authorize.propTypes = {
   storeJWT: PropTypes.func,
   API: PropTypes.string.isRequired,
   strategy: PropTypes.object.isRequired,
-  loginPayload: PropTypes.sting.isRequired
+  loginPayload: PropTypes.string.isRequired
 };
