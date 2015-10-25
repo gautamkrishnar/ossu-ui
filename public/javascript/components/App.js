@@ -61,7 +61,8 @@ export class App extends React.Component {
           onCheckClick={() => dispatch(hideRedirectModal())}
           writeToAPI={this.writeToAPI}
           storJWT={this.storeJWT}
-        />
+         />
+        
         <BodyContent
           {...other}
           readFromAPI={this.readFromAPI}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { ContentBox } from './ContentBox.js';
+import Grid, { Cell } from 'react-mdl/lib/Grid.js'
+
 
 export class HorizontalAlignedRow extends React.Component {
   constructor (props) {
@@ -8,15 +10,13 @@ export class HorizontalAlignedRow extends React.Component {
 
   render () {
     return (
-      <div className='horizontalAlignedRow vertical stripe quote segment'>
-        <div className='ui equal width stackable internally celled grid'>
-          <div className='center aligned row'>
+      <Cell col={10} phone={12} className='center-cell'>
+        <Grid className='card-container'>
             <ContentBox />
             <ContentBox />
             <ContentBox />
-          </div>
-        </div>
-      </div>
+        </Grid>
+      </Cell>
     );
   }
 }

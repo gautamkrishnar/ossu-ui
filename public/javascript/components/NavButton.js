@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-mdl/lib/Button.js';
 
 export class NavButton extends React.Component {
   constructor (props) {
@@ -12,9 +13,9 @@ export class NavButton extends React.Component {
 
   render () {
     return (
-      <a href='#' onClick={this.handleClick()} className='navButton item'>
+      <Button ripple> <a href='#' onClick={this.handleClick()} className='nav-text'>
         A Button!
-      </a>
+      </a></Button>
     );
   }
 }

@@ -4,6 +4,7 @@
 jsconfig.json
 tsd.json
 .eslintrc
+npm-debug.log
 
 # Because I am a code hoarder
 personal/
@@ -13,7 +14,7 @@ personal/
 # Folders
 node_modules/
 typings/
-semantic/
+
 
 # compiled modules
 bundle.js

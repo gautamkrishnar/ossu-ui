@@ -2,6 +2,7 @@ import React from 'react';
 import {Masthead} from './Masthead.js';
 import {VerticalSegment} from './VerticalSegment.js';
 import {HorizontalAlignedRow} from './HorizontalAlignedRow.js';
+import Grid, { Cell } from 'react-mdl/lib/Grid.js'
 
 export class BodyContent extends React.Component {
   constructor (props) {
@@ -10,14 +11,13 @@ export class BodyContent extends React.Component {
 
   render () {
     return (
-      <div className='bodyContent'>
+      <Grid>
         <Masthead />
         <VerticalSegment />
         <HorizontalAlignedRow />
         <VerticalSegment />
         <VerticalSegment />
-        Hello, I am the BodyContent
-      </div>
+      </Grid>
     );
   }
 }

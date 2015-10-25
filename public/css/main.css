@@ -1,0 +1,213 @@
+body {
+    background-color: #e5f2fa;
+    font-size: 16px;
+    
+  }
+
+.body-text {
+  display: table-row;
+  font-family: Questrial;
+  font-size: 2rem;
+  line-height: 2.75rem;
+}
+
+.body-content {
+  margin-top: 0;
+}
+
+.card-container {
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
+.card-image {
+  display: block;
+  border: none;
+  margin: 10% auto;
+  max-width: 90%;
+
+}
+
+.image-card {
+  padding: 2.5%;
+
+}
+
+.cell-width {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.center-cell {
+  margin: auto;
+}
+
+.center-cell-text {
+  margin: auto;
+  width: 60%;
+}
+
+.large-content-col {
+  margin: 6px;
+  min-width: 400px;
+}
+
+.masthead {
+    background-color: #52A7E0;
+    display: block;
+    margin: 0;
+    height: 650px;
+    color: #eee;
+}
+
+.masthead-content {
+  text-align: center;
+
+}
+
+.masthead h1 {
+  padding-top: 180px;
+  font-size: 12rem;
+  font-weight: bold;
+  font-family: Questrial
+}
+
+.masthead h2 {
+  font-family: Questrial;
+  padding-top: 12px; 
+}
+
+.mdl-button {
+  backround-color: #fff;
+}
+
+.mdl-card__media {
+  background-color: #F17972;
+  height: 250%;
+}
+
+
+.mdl-grid {
+  padding: 0;
+}
+
+.mdl-layout--fixed-header{
+  position: fixed;
+  z-index: 2;
+}
+
+.mdl-layout__header {
+  background-color: #52A7E0;
+}
+
+.cast-shadow {
+ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mdl-ripple {
+  background: #55efef;
+}
+
+.nav-text {
+  color: #EEEEEE;
+  text-decoration: none;
+}
+.ossu-logo {
+  padding: top 180px;
+}
+
+.ossu-purpose {
+  background-color: #E4e4e4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.text-box {
+  text-align: center;
+  margin: auto;
+  padding: 5px auto;
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+
+  .ossu-logo {
+    padding-top: 48px;
+    text-align: center;
+  }
+
+  .masthead h1 {
+  padding-top: 48px;
+  font-size: 7em;
+ }
+
+  .masthead h2 {
+    font-size: 1.5em;
+  }
+
+  .masthead {
+      height: 400px;
+  }
+
+  .small-purpose {
+    height: auto;
+  }
+
+  .body-text {
+    padding: 15px;
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .ossu-logo {
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  .masthead h1 {
+  padding-top: 24px;
+  font-size: 5em;
+ }
+
+  .masthead h2 {
+    font-size: 1.25em;
+  }
+
+  .masthead {
+      height: 300px;
+  }
+
+  
+
+  .small-height {
+    height: auto;
+  }
+
+  .body-text {
+    margin: 5px;
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+  }
+}
+}
+
+
+

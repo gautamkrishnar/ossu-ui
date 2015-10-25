@@ -2,6 +2,9 @@ import React from 'react';
 import { NavLogo } from './NavLogo.js';
 import { NavButton } from './NavButton.js';
 import { Login } from './Login.js';
+import { BodyContent } from './BodyContent.js';
+import Layout, { Header, HeaderRow, HeaderTabs, Drawer, Content } from 'react-mdl/lib/layout/Layout.js';
+
 
 export class NavBar extends React.Component {
   constructor (props) {
@@ -11,20 +14,23 @@ export class NavBar extends React.Component {
   render () {
     const {...other} = this.props;
     return (
-      <div className='navBar ui fixed inverted menu'>
-        <div className='ui container'>
-          <NavLogo />
+      <Layout fixedHeader={true}>
+        <Header title=<NavLogo /> >
           <NavButton 
+          {...other}
+          />
+          
+          <NavButton
             {...other}
           />
-          <NavButton 
-            {...other}
-          />
+
           <Login 
             {...other}
           />
-        </div>
-      </div>
+        </Header>
+      </Layout>
+
+
     );
   }
 }
