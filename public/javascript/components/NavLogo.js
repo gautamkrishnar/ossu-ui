@@ -11,16 +11,19 @@ export class NavLogo extends React.Component {
       let navLeft = {
       	name: token.name,
       	picture: token.githubAvatar,
-      	href: '#drawer'
+      	href: '/user-profile',
+      	id: 'user-avatar'
+
       }
       return navLeft;
     }
     
     else {
       let navLeft = {
-      	name: 'OSSU',
-      	picture: './public/favicons/favicon-32x32.png',
-      	href: '#'
+      	name: ' ',
+      	picture: './public/favicons/mstile-70x70.png',
+      	href: '#',
+      	id: 'logo-fade-in-out'
       }
       return navLeft;
     }
@@ -29,7 +32,7 @@ export class NavLogo extends React.Component {
   render () {
     return (
       <a href={this.isLoggedIn().href}><div className='nav-text' href='#'>
-        <img className='nav-logo' src={this.isLoggedIn().picture} /><p className='hide-on-mobile nav-text'> {this.isLoggedIn().name} </p>
+        <img id={this.isLoggedIn().id} className='nav-img' src={this.isLoggedIn().picture} /><p className='hide-on-mobile nav-text'> {this.isLoggedIn().name} </p>
       </div></a>
     );
   }
