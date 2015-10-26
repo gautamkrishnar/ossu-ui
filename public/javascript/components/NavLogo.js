@@ -20,7 +20,7 @@ export class NavLogo extends React.Component {
     
     else {
       let navLeft = {
-      	name: ' ',
+      	name: 'Brandon ',
       	picture: './public/favicons/mstile-70x70.png',
       	href: '#',
       	id: 'logo-fade-in-out'
