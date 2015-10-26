@@ -11,19 +11,20 @@ export class NavBar extends React.Component {
     super(props);
   }
 
+  handleClick () {
+    
+    }
+  
+
   render () {
     const {...other} = this.props;
     return (
-      <Layout fixedHeader={true}>
-        <Header title=<NavLogo /> >
+      <Layout fixedHeader={true} >
+        <Header title=<NavLogo /> className='mdl-layout__header--waterfall' >
           <NavButton 
           {...other}
           />
           
-          <NavButton
-            {...other}
-          />
-
           <Login 
             {...other}
           />

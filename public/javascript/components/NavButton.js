@@ -13,9 +13,9 @@ export class NavButton extends React.Component {
 
   render () {
     return (
-      <Button ripple> <a href='#' onClick={this.handleClick()} className='nav-text'>
-        A Button!
-      </a></Button>
+       <a href='#primary-cards' onClick={this.handleClick()}><Button ripple className='nav-text'>
+        A Button!</Button>
+      </a>
     );
   }
 }

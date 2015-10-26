@@ -10,7 +10,7 @@ export class VerticalSegmentContent extends React.Component {
   render () {
     return (
   <Cell col={12}>  
-    <Cell coll={10} phone={12} className='center-cell-text'>
+    <Cell col={10} phone={12} className='center-cell-text'>
       <div className='text-box'>
         <p className='body-text'> Open Source Society Universit is a community of students and professionals alike of all skill levels from around the wordl dedicated to increasing their understanding of computer science and helping others who are learning with them</p>
       </div>

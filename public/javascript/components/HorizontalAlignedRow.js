@@ -10,7 +10,7 @@ export class HorizontalAlignedRow extends React.Component {
 
   render () {
     return (
-      <Cell col={10} phone={12} className='center-cell'>
+      <Cell col={10} phone={12} className='center-cell' id='primary-cards'>
         <Grid className='card-container'>
             <ContentBox />
             <ContentBox />
