@@ -18,7 +18,7 @@ export class NavLogo extends React.Component {
     
     else {
       let navLeft = {
-      	name: 'Brandon Stapleton',
+      	name: 'OSSU',
       	picture: './public/favicons/favicon-32x32.png',
       	href: '#'
       }
