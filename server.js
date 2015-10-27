@@ -1,6 +1,6 @@
-// var path = require('path');
+var path = require('path');
 var express = require('express');
-var rewrite = require('express-urlrewrite');
+// var rewrite = require('express-urlrewrite');
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
 var logger = require('morgan');
@@ -29,11 +29,11 @@ app.use(logger('dev'));
 //   }
 // });
 
-app.use(rewrite('/authorize/*', '/index.html'));
+// app.use(rewrite('/authorize/*', '/index.html'));
 app.use(express.static(__dirname));
-// app.get('*', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'index.html'));
-// });
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.listen(3000, 'localhost', function (err) {
   if (err) {
