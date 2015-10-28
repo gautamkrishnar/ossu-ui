@@ -29,16 +29,6 @@ function selectedCurriculum (state = initialState.selectedCurriculum, action) {
       return state;
   }
 }
-/* function redirectModal (state = initialState.redirectModal, action) {
-  switch (action.type) {
-    case SHOW_REDIRECT_MODAL:
-      return action.data;
-    case HIDE_REDIRECT_MODAL:
-      return initialState.redirectModal;
-    default:
-      return state;
-  }
-}*/
 function userInfo (state = initialState.userInfo, action) {
   switch (action.type) {
     case REQUEST_USER_INFO:

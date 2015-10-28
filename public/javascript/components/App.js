@@ -1,13 +1,20 @@
+// Import 3rd Party Dependencies
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Reqwest from 'reqwest';
-import {BodyContent} from './BodyContent.js';
+
+// Import Components
 import {NavBar} from './NavBar.js';
+
+// Import Actions
 import {
   fetchAuthStrategiesIfNeeded, fetchCurriculumIfNeeded,
-  showRedirectModal, hideRedirectModal
+  showRedirectModal
 } from '../actions/action.js';
 
+/*
+ * Main React component
+ */
 export class App extends Component {
   constructor (props) {
     super(props);
@@ -17,19 +24,8 @@ export class App extends Component {
     const {dispatch} = this.props;
     dispatch(fetchAuthStrategiesIfNeeded());
     dispatch(fetchCurriculumIfNeeded('cs'));
+    console.log(this.props);
   }
-
-  /* readFromAPI (url, callback) {
-    Reqwest({
-      url: url,
-      type: 'json',
-      method: 'get',
-      contentType: 'application/json',
-      headers: {'Authorization': localStorage.getItem('jwt')},
-      success: callback,
-      error: error => { console.error(url, error['response']); }
-    });
-  }*/
 
   writeToAPI (method, url, data, callback) {
     Reqwest({
@@ -51,30 +47,29 @@ export class App extends Component {
   }
 
   render () {
-    const { dispatch, ...other } = this.props;
-    // console.log(NavBar);
+    const { dispatch, children, state } = this.props;
     return (
       <div className='app'>
         <NavBar
-          {...other}
           onLoginClick={data => dispatch(showRedirectModal(data))}
-          onCheckClick={() => dispatch(hideRedirectModal())}
-          writeToAPI={this.writeToAPI}
-          storJWT={this.storeJWT}
+          state={state}
         />
-        <BodyContent
-          {...other}
-          readFromAPI={this.readFromAPI}
-          writeToAPI={this.writeToAPI}
-        />
+        {children}
       </div>
     );
   }
 }
 
+/*
+ * Prop Validation. We will want to amke sure we turn this off before going to production.
+ */
 App.propTypes = {
-  dispatch: PropTypes.func.isRequired
-
+  dispatch: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
+  state: PropTypes.object.isRequired
 };
 
 // Which props do we want to inject, given the global state?

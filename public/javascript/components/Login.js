@@ -8,16 +8,6 @@ export class Login extends React.Component {
     super(props);
   }
 
-  /* componentDidMount () {
-    this.getAuthStrategyFromAPI();
-  }*/
-
-  /* getAuthStrategyFromAPI () {
-    this.props.readFromAPI(this.props.API + '/auth', (strategy) => {
-      this.props.addAuthStrategy(strategy); // redux method for set state.
-    });
-  }*/
-
   isLoggedIn () {
     if (window.localStorage.getItem('jwt')) {
       return 'logout';
