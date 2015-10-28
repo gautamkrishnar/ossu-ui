@@ -8,6 +8,11 @@ export class NavBar extends React.Component {
     super(props);
   }
 
+  componentDidMount () {
+    console.log('Loggin from Navbar');
+    console.log(this.props);
+  }
+
   render () {
     const {...other} = this.props;
     return (
@@ -15,10 +20,10 @@ export class NavBar extends React.Component {
         <div className='ui container'>
           <NavLogo />
           <NavButton 
-            {...other}
+            linkTo="Home"
           />
           <NavButton 
-            {...other}
+            linkTo="About"
           />
           <Login 
             {...other}

@@ -1,12 +1,22 @@
+// Import 3rd Party Dependencies
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Reqwest from 'reqwest';
-import {BodyContent} from './BodyContent.js';
+// import { Route, IndexRoute } from 'react-router';
+
+// Import Components
+// import BodyContent from './BodyContent.js';
 import {NavBar} from './NavBar.js';
+
+// Import Actions
 import {
   fetchAuthStrategiesIfNeeded, fetchCurriculumIfNeeded,
-  showRedirectModal, hideRedirectModal
+  showRedirectModal
 } from '../actions/action.js';
+
+/*
+ * Main React component!
+ */
 
 export class App extends Component {
   constructor (props) {
@@ -17,6 +27,7 @@ export class App extends Component {
     const {dispatch} = this.props;
     dispatch(fetchAuthStrategiesIfNeeded());
     dispatch(fetchCurriculumIfNeeded('cs'));
+    console.log(this.props);
   }
 
   /* readFromAPI (url, callback) {
@@ -51,30 +62,27 @@ export class App extends Component {
   }
 
   render () {
-    const { dispatch, ...other } = this.props;
+    const { dispatch, children, state } = this.props;
     // console.log(NavBar);
     return (
       <div className='app'>
         <NavBar
-          {...other}
           onLoginClick={data => dispatch(showRedirectModal(data))}
-          onCheckClick={() => dispatch(hideRedirectModal())}
-          writeToAPI={this.writeToAPI}
-          storJWT={this.storeJWT}
+          state={state}
         />
-        <BodyContent
-          {...other}
-          readFromAPI={this.readFromAPI}
-          writeToAPI={this.writeToAPI}
-        />
+        {children}
       </div>
     );
   }
 }
 
 App.propTypes = {
-  dispatch: PropTypes.func.isRequired
-
+  dispatch: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
+  state: PropTypes.object.isRequired
 };
 
 // Which props do we want to inject, given the global state?

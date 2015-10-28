@@ -1,9 +1,9 @@
 /* eslint-env es6 */
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 // import { Uri } from 'jsuri';
 
-export class Authorize extends Component {
+export default class Authorize extends React.Component {
   constructor (props) {
     super(props);
   }
@@ -12,9 +12,10 @@ export class Authorize extends Component {
   //   this.props.setLoginPayloadInState(new Uri(window.location.search).getQueryParamValue('code'));
   // }
 
-  // componentDidMount () {
-  //   this.makeLoginRequestToAPI();
-  // }
+  componentDidMount () {
+    // this.makeLoginRequestToAPI();
+    window.alert('this is just a proof of concept that it is working! ' + window.location);
+  }
 
   // makeLoginRequestToAPI () {
   //   this.props.writeToAPI('post', this.props.API + this.props.strategy.callback, this.props.loginPayload, jwt => {
@@ -25,10 +26,8 @@ export class Authorize extends Component {
 
   render () {
     return (
-      <div className='ui inverted center aligned'>
-        <div className='ui text container'>
-          <h1 className='ui inverted header'>Attempting to log you in</h1>
-        </div>
+      <div className='authorize'>
+        <h1 className='ui inverted flashing header'>Attempting to log you in</h1>
       </div>
     );
   }
@@ -38,7 +37,7 @@ Authorize.propTypes = {
   setLoginPayloadInState: PropTypes.func,
   writeToAPI: PropTypes.func,
   storeJWT: PropTypes.func,
-  API: PropTypes.string.isRequired,
-  strategy: PropTypes.object.isRequired,
-  loginPayload: PropTypes.string.isRequired
+  API: PropTypes.string,
+  strategy: PropTypes.object,
+  loginPayload: PropTypes.string
 };
