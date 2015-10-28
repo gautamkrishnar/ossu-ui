@@ -18,14 +18,8 @@ export const LOG_USER_IN = 'LOG_USER_IN';
 export const LOG_USER_OUT = 'LOG_USER_OUT';
 
 /*
- * other constants
- */
-
-/*
  * action creators
  */
-
- // I have so many actions, I should consider splitting them into seperate files.
 
 /* Async Action Creators for getting Auth Strategies */
 

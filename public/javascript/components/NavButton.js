@@ -6,11 +6,6 @@ export class NavButton extends React.Component {
     super(props);
   }
 
-  // handleClick () {
-  //   // console.log(this.props);
-  //   return this.props.onCheckClick;
-  // }
-
   getLink (link) {
     return '/' + link.toLowerCase();
   }
@@ -24,11 +19,5 @@ export class NavButton extends React.Component {
 }
 
 NavButton.propTypes = {
-  // onCheckClick: PropTypes.func.isRequired,
   linkTo: PropTypes.string.isRequired
 };
-
-/*
-<a href='#' onClick={this.handleClick()} className='navButton item'>
-        A Button!
-      </a>*/

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Router, Route,
-        IndexRoute, Redirect} from 'react-router';
 import {createHistory, useBasename} from 'history';
+import { 
+  Router, Route,
+  IndexRoute, Redirect
+} from 'react-router';
 
 import App from '../components/App.js';
 import Authorize from '../components/Authorize.js';

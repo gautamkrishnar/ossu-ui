@@ -2,10 +2,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Reqwest from 'reqwest';
-// import { Route, IndexRoute } from 'react-router';
 
 // Import Components
-// import BodyContent from './BodyContent.js';
 import {NavBar} from './NavBar.js';
 
 // Import Actions
@@ -15,9 +13,8 @@ import {
 } from '../actions/action.js';
 
 /*
- * Main React component!
+ * Main React component
  */
-
 export class App extends Component {
   constructor (props) {
     super(props);
@@ -29,18 +26,6 @@ export class App extends Component {
     dispatch(fetchCurriculumIfNeeded('cs'));
     console.log(this.props);
   }
-
-  /* readFromAPI (url, callback) {
-    Reqwest({
-      url: url,
-      type: 'json',
-      method: 'get',
-      contentType: 'application/json',
-      headers: {'Authorization': localStorage.getItem('jwt')},
-      success: callback,
-      error: error => { console.error(url, error['response']); }
-    });
-  }*/
 
   writeToAPI (method, url, data, callback) {
     Reqwest({
@@ -63,7 +48,6 @@ export class App extends Component {
 
   render () {
     const { dispatch, children, state } = this.props;
-    // console.log(NavBar);
     return (
       <div className='app'>
         <NavBar
@@ -76,6 +60,9 @@ export class App extends Component {
   }
 }
 
+/*
+ * Prop Validation. We will want to amke sure we turn this off before going to production.
+ */
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([

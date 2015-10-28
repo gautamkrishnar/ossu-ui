@@ -15,7 +15,6 @@ const createStoreWithMiddleware = compose(
 
 export default function configureStore (initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
-//  console.log('logging from configureStore');
   if (module.hot) {
     module.hot.accept('../reducers/reducers.js', () => {
       const nextRootReducer = require('../reducers/reducers.js');

@@ -8,21 +8,9 @@ export default class Authorize extends React.Component {
     super(props);
   }
 
-  // componentWillMount () {
-  //   this.props.setLoginPayloadInState(new Uri(window.location.search).getQueryParamValue('code'));
-  // }
-
   componentDidMount () {
-    // this.makeLoginRequestToAPI();
-    window.alert('this is just a proof of concept that it is working! ' + window.location);
+    window.alert('this is just a proof of concept that it is working! We can put all the javascript for ajax requests in componentDidMount');
   }
-
-  // makeLoginRequestToAPI () {
-  //   this.props.writeToAPI('post', this.props.API + this.props.strategy.callback, this.props.loginPayload, jwt => {
-  //     this.props.storeJWT(jwt);
-  //     // navigate to profile or home page or something.
-  //   });
-  // }
 
   render () {
     return (
