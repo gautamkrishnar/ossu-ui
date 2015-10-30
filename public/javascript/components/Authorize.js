@@ -1,33 +1,31 @@
 /* eslint-env es6 */
 
-import { React } from 'react';
-import { Uri } from 'jsuri';
+import React, { PropTypes } from 'react';
+// import { Uri } from 'jsuri';
 
-export class Authorize extends React.Component {
+export default class Authorize extends React.Component {
   constructor (props) {
     super(props);
   }
 
-  componentWillMount () {
-    this.props.setLoginPayloadInState(new Uri(location.search).getQueryParamValue('code'));
-  }
-
   componentDidMount () {
-    this.makeLoginRequestToAPI();
-  }
-
-  makeLoginRequestToAPI () {
-    this.props.writeToAPI('post', this.props.API + this.props.strategy.callback, this.props.loginPayload, jwt => {
-      this.props.storeJWT(jwt);
-      // navigate to profile or home page or something.
-    });
+    window.alert('this is just a proof of concept that it is working! We can put all the javascript for ajax requests in componentDidMount');
   }
 
   render () {
-    <div className='ui inverted center aligned'>
-      <div className='ui text container'>
-        <h1 className='ui inverted header flash'>Attempting to log you in</h1>
+    return (
+      <div className='authorize'>
+        <h1 className='ui inverted flashing header'>Attempting to log you in</h1>
       </div>
-    </div>
+    );
   }
 }
+
+Authorize.propTypes = {
+  setLoginPayloadInState: PropTypes.func,
+  writeToAPI: PropTypes.func,
+  storeJWT: PropTypes.func,
+  API: PropTypes.string,
+  strategy: PropTypes.object,
+  loginPayload: PropTypes.string
+};

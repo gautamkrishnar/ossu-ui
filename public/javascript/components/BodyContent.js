@@ -3,7 +3,7 @@ import {Masthead} from './Masthead.js';
 import {VerticalSegment} from './VerticalSegment.js';
 import {HorizontalAlignedRow} from './HorizontalAlignedRow.js';
 
-export class BodyContent extends React.Component {
+export default class BodyContent extends React.Component {
   constructor (props) {
     super(props);
   }
