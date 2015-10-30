@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {createHistory, useBasename} from 'history';
-import { 
+import {
   Router, Route,
   IndexRoute, Redirect
 } from 'react-router';
