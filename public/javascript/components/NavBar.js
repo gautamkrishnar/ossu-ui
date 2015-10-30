@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLogo } from './NavLogo.js';
 import { NavButton } from './NavButton.js';
 import { Login } from './Login.js';
+import Layout, { Header, HeaderRow, HeaderTabs, Drawer, Content } from 'react-mdl/lib/layout/Layout.js';
 
 export class NavBar extends React.Component {
   constructor (props) {
@@ -16,20 +17,13 @@ export class NavBar extends React.Component {
   render () {
     const {...other} = this.props;
     return (
-      <div className='navBar ui fixed inverted menu'>
-        <div className='ui container'>
-          <NavLogo />
-          <NavButton 
-            linkTo="Home"
-          />
-          <NavButton 
-            linkTo="About"
-          />
-          <Login 
-            {...other}
-          />
-        </div>
-      </div>
+      <Layout fixedHeader={true} >
+        <Header title='OSS' className='mdl-layout__header--waterfall' >
+          <NavButton linkTo="Home" />
+          <NavButton linkTo="About" />
+          <Login {...other} />
+        </Header>
+      </Layout>
     );
   }
 }
