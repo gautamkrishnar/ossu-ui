@@ -1,7 +1,6 @@
 import React from 'react';
 import Grid, { Cell } from 'react-mdl/lib/Grid.js'
 
-
 export class ContentBox extends React.Component {
   render () {
     return (
