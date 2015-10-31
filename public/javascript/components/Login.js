@@ -2,21 +2,12 @@
 
 // import { Router, Route, Link } from 'react-router';
 import React from 'react';
+import Button from 'react-mdl/lib/Button.js';
 
 export class Login extends React.Component {
   constructor (props) {
     super(props);
   }
-
-  /* componentDidMount () {
-    this.getAuthStrategyFromAPI();
-  }*/
-
-  /* getAuthStrategyFromAPI () {
-    this.props.readFromAPI(this.props.API + '/auth', (strategy) => {
-      this.props.addAuthStrategy(strategy); // redux method for set state.
-    });
-  }*/
 
   isLoggedIn () {
     if (window.localStorage.getItem('jwt')) {
@@ -36,7 +27,7 @@ export class Login extends React.Component {
   }
 
   calculateStyleClasses () {
-    return 'navButton item pull right';
+    return 'nav-text';
   }
 
   assembleAuthUri () {
@@ -46,7 +37,7 @@ export class Login extends React.Component {
 
   render () {
     return (
-        <a onClick={this.handleLogInOut()} className={this.calculateStyleClasses()}>{this.isLoggedIn()}</a>
+        <Button ripple><a onClick={this.handleLogInOut()} className={this.calculateStyleClasses()}>{this.isLoggedIn()}</a></Button>
     );
   }
 }

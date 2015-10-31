@@ -1,0 +1,300 @@
+a {
+  text-decoration: none;
+  font-family: 'Questrial';
+}
+
+h1, h2, h3 {
+  font-family: 'Questrial';
+}
+
+ p {
+  font-family: 'Quattrocento', serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.08rem;
+}
+
+
+
+body {
+    background-color: #e5f2fa;
+    font-size: 16px;
+    text-decoration: none;
+    
+  }
+
+.large-body-text {
+  display: table-row;
+  font-family: 'Questrial';
+  font-size: 2rem;
+  line-height: 2.75rem;
+}
+
+.card-container {
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
+.card-img {
+  display: block;
+  border: none;
+  margin: 10% auto;
+  max-width: 90%;
+
+}
+
+.image-card {
+  padding: 2.5%;
+
+}
+
+.cell-width {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.center-cell {
+  margin: auto;
+}
+
+.constrain-text-box {
+  margin: auto;
+  width: 60%;
+}
+
+.center-text-box {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px auto;
+
+}
+
+.masthead {
+    background-color: #52A7E0;
+    margin: 0;
+    height: 650px;
+    text-align: center;
+    font-family: 'Questrial';
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.masthead h1 {
+  font-size: 12rem;
+  font-weight: bold;
+  color: #eee;
+}
+
+.masthead h2 {
+  font-weight: bold;
+  font-size: 5rem;
+  margin-top: -4rem;
+  color: 20124D;
+}
+
+
+.masthead h3 {
+   position: relative;
+   font-size: 1.5rem;
+   border-top: 35%;
+   padding: auto;
+}
+
+
+.ossu-logo {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mdl-button {
+  backround-color: #fff;
+}
+
+.mdl-card__media {
+  background-color: #F17972;
+  height: 250%;
+}
+
+
+.mdl-grid {
+  padding: 0;
+}
+
+.mdl-layout--fixed-header{
+  position: fixed;
+  z-index: 2;
+}
+
+.mdl-layout__header {
+  background-color: #52A7E0;
+}
+
+.mdl-layout__header-row {
+  width: 100%;
+  padding-left: 16px;
+
+}
+
+.cast-shadow {
+ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mdl-ripple {
+  background: #55efef;
+}
+
+.nav-text {
+  color: #EEEEEE;
+  text-decoration: none;
+  display: inline;
+  font-size: 1.5rem;
+  letter-spacing: .12rem;
+}
+
+.nav-text p {
+  font-family: 'Questrial';
+}
+
+.nav-img {
+  padding-right: 15px;
+  padding-left: 10px;
+}
+
+.ossu-purpose {
+  background-color: #E4e4e4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+
+
+
+
+
+/*
+ *
+ * Animation
+ * Classes
+ *
+ */
+
+#logo-fade-in-out {
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+#logo-fade-in-out.showing {
+  transition: opacity 0.4s;
+  opacity: 1.0; 
+}
+
+.masthead h1.text-shadow  {
+  transition: text-shadow 1s;
+  text-shadow: 0px 4px #20124D;
+
+}
+
+.masthead h2.text-shadow {
+  transition: text-shadow 1s;
+  text-shadow: 0px 1.4px #eee;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+  .mdl-layout__header {
+    display: flex;
+  }
+
+  /* Override default hiding of header on
+     small screens in material.css */
+
+
+}
+
+@media (max-width: 900px) {
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .ossu-logo {
+    padding-top: 48px;
+
+  }
+
+  .masthead h1 {
+    font-size: 7em;
+  }
+
+  .masthead h2 {
+    font-size: 3.5rem;
+    margin-top: -3.2rem; 
+  }
+
+  .masthead h3 {
+   padding-top: 0px;
+   font-size: 1rem;
+   line-height: 1.25rem;
+  }
+
+  .masthead {
+      height: 450px;
+  }
+
+  .large-body-text {
+    padding: 15px;
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+  }
+
+}
+
+
+
+
+@media (max-height: 600px) {
+
+  .masthead h1 {
+    font-size: 5em;
+  }
+
+  .masthead h2 {
+    font-size: 2.5rem;
+    margin-top: -3.7rem;
+  
+  }
+
+  .masthead h3 {
+   padding-top: 0px;
+   font-size: 1.5rem;
+   line-height: 1.5rem;
+  }
+
+  .masthead {
+      height: 300px;
+  }

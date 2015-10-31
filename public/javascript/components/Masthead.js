@@ -3,14 +3,16 @@ import React from 'react';
 export class Masthead extends React.Component {
   render () {
     return (
-      <div className='mastHead ui inverted masthead center aligned segment'>
-        <div className='ui text container'>
-          <h1 className='ui inverted header shadow'> OSSU </h1>
-          <h1 className='ui inverted header'> OSSU </h1>
-        </div>
-        <div className='ui text container'>
-          <h2> Learn Amazing things Here! </h2>
-        </div>
+      <div className='mdl-layout__content masthead'>
+        <div className='ossu-logo'>
+          <div className='center-text-box '>
+              <h1> OSS </h1>
+             <h2> Univeristy </h2>  
+          </div>
+          <div className='center-text-box constrain-text-box'>
+            <h3> Path to a free, self-taught education in Computer Science! </h3>
+          </div>
+        </div>  
       </div>
     );
   }
