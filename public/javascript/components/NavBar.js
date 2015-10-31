@@ -3,6 +3,7 @@ import { NavButton } from './NavButton.js';
 import { Login } from './Login.js';
 import { BodyContent } from './BodyContent.js';
 import Layout, { Header, HeaderRow, HeaderTabs, Drawer, Content } from 'react-mdl/lib/layout/Layout.js';
+import { NavLogo } from './NavLogo.js';
 
 export class NavBar extends React.Component {
   constructor (props) {
