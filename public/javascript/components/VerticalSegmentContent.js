@@ -1,12 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
-import Grid, { Cell } from 'react-mdl/lib/Grid.js'
-=======
-import { Cell } from 'react-mdl/lib/Grid.js';
->>>>>>> develop
+import { Cell } from 'react-mdl/lib/Grid.js
 
 export class VerticalSegmentContent extends React.Component {
-
+  
   constructor (props) {
     super(props);
   }
