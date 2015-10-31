@@ -1,14 +1,17 @@
 import React from 'react';
-
 import { NavButton } from './NavButton.js';
 import { Login } from './Login.js';
-import Layout, { Header } from 'react-mdl/lib/layout/Layout.js';
+import { BodyContent } from './BodyContent.js';
+import Layout, { Header, HeaderRow, HeaderTabs, Drawer, Content } from 'react-mdl/lib/layout/Layout.js';
+import { NavLogo } from './NavLogo.js';
 
 export class NavBar extends React.Component {
   constructor (props) {
     super(props);
   }
 
+  handleClick () {
+    }
   componentDidMount () {
     console.log('Loggin from Navbar');
     console.log(this.props);
@@ -18,7 +21,7 @@ export class NavBar extends React.Component {
     const {...other} = this.props;
     return (
       <Layout fixedHeader={true} >
-        <Header title='OSS' className='mdl-layout__header--waterfall' >
+        <Header title= <NavLogo /> className='mdl-layout__header--waterfall' >
           <NavButton linkTo='Home' />
           <NavButton linkTo='About' />
           <Login {...other} />

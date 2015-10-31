@@ -14,6 +14,7 @@ export class HorizontalAlignedRow extends React.Component {
           <ContentBox />
           <ContentBox />
           <ContentBox />
+
         </Grid>
       </Cell>
     );

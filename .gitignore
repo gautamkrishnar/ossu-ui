@@ -15,8 +15,11 @@ personal/
 # Folders
 node_modules/
 typings/
-semantic/
+
 
 # compiled modules
 bundle.js
 
+# Vim 
+.swo
+.swp
