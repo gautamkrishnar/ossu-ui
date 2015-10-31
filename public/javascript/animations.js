@@ -7,8 +7,6 @@ function shadow() {
 	$('.masthead h2').addClass('text-shadow');
 }
 
-
-
 $(window).scroll(function() {     
       var scroll = $(window).scrollTop();
       var mastheadHeight = $(".masthead").height();
@@ -22,21 +20,3 @@ $(window).scroll(function() {
        
       }
 });
-
-/*
-
-$(window).scroll(function() {     
-      var scroll = $(window).scrollTop();
-      var mastheadHeight = $(".masthead").height();
-      if (scroll > mastheadHeight - 36) {
-      	$( "#logo-fade-in-out" ).animate({opacity: 1.00}, 800, function(){});
-      }
-      else {
-      	
-       
-      }
-});
-
-*/
-
-
