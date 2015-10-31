@@ -11,20 +11,21 @@ export const REQUEST_CURRICULUM = 'REQUEST_CURRICULUM';
 export const RECEIVE_CURRICULUM = 'RECEIVE_CURRICULUM';
 export const INVALIDATE_CURRICULUM = 'INVALIDATE_CURRICULUM';
 export const SELECT_CURRICULUM = 'SELECT_CURRICULUM';
-
-/*
- * other constants
- */
+export const REQUEST_USER_INFO = 'REQUEST_USER_INFO';
+export const RECEIVE_USER_INFO = 'RECEIVE_USER_INFO';
+export const INVALIDATE_USER_INFO = 'INVALIDATE_USER_INFO';
+export const LOG_USER_IN = 'LOG_USER_IN';
+export const LOG_USER_OUT = 'LOG_USER_OUT';
 
 /*
  * action creators
  */
 
-/* Async Action Creators for getting Auth Strategies*/
+/* Async Action Creators for getting Auth Strategies */
 
 function requestAuthStrategies () {
   return {
-    type: REQUEST_AUTH_STRATEGIES,
+    type: REQUEST_AUTH_STRATEGIES
   };
 }
 function receiveAuthStrategies (stratArray) {
@@ -61,10 +62,12 @@ export function fetchAuthStrategiesIfNeeded () {
 
 /* Action Creators for Modal */
 
-export function showRedirectModal (data) {
+export function showRedirectModal (redirectURL, redirectMessage, redirectImg) {
   return {
     type: SHOW_REDIRECT_MODAL,
-    data
+    url: redirectURL,
+    message: redirectMessage,
+    img: redirectImg
   };
 }
 export function hideRedirectModal () {
@@ -117,7 +120,7 @@ function fetchCurriculum (curriculum) {
 function shouldFetchCurriculum (state, curriculum) {
   const courses = state.curriculumList[curriculum];
   if (!courses) {
-    //console.log('I am doing something');
+    // console.log('I am doing something');
     return true;
   }
   if (courses.isFetching) {
@@ -130,5 +133,61 @@ export function fetchCurriculumIfNeeded (curriculum) {
     if (shouldFetchCurriculum(getState(), curriculum)) {
       return dispatch(fetchCurriculum(curriculum));
     }
+  };
+}
+
+/* Async Action Creators for handling User Info */
+
+export function invalidateUserInfo () {
+  return {
+    type: INVALIDATE_USER_INFO
+  };
+}
+function requestUserInfo (user) {
+  return {
+    type: REQUEST_USER_INFO,
+    user
+  };
+}
+function receiveUserInfo (user, json) {
+  return {
+    type: RECEIVE_USER_INFO,
+    json, // I may need to transfor that data, it depends on what it is going to look like
+    receivedAt: Date.now()
+  };
+}
+function fetchUserInfo (user) {
+  return dispatch => {
+    dispatch(requestUserInfo(user));
+    return fetch('http://ossu.io/api/user')
+    .then(response => response.json())
+    .then(json => dispatch(receiveUserInfo(user, json)));
+  };
+}
+function shouldFetchUserInfo (state, user) {
+  const usr = state.userInfo;
+  if (!usr && state.uiState.isLoggedin) {
+    return true;
+  }
+  if (usr.isFetching) {
+    return false;
+  }
+  return usr.didInvalidate;
+}
+export function fetchUserInfoIfNeeded (user) {
+  return (dispatch, getState) => {
+    if (shouldFetchUserInfo(getState(), user)) {
+      return dispatch(fetchUserInfo(user));
+    }
+  };
+}
+export function logUserIn () {
+  return {
+    type: LOG_USER_IN
+  };
+}
+export function logUserOut () {
+  return {
+    type: LOG_USER_OUT
   };
 }

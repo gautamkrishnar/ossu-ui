@@ -5,6 +5,7 @@ jsconfig.json
 tsd.json
 .eslintrc
 npm-debug.log
+ossu-ui.*
 
 # Because I am a code hoarder
 personal/
