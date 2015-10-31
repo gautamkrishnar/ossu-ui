@@ -2,7 +2,7 @@ import React from 'react';
 
 export class NavLogo extends React.Component {
  
- /* Use props instead o local storage to retrieve
+ /* Use props instead of local storage to retrieve
  
   isLoggedIn () {
     if (window.localStorage.getItem('jwt')) {

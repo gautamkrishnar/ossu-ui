@@ -14,8 +14,6 @@ h1, h2, h3 {
   letter-spacing: 0.08rem;
 }
 
-
-
 body {
     background-color: #e5f2fa;
     font-size: 16px;
@@ -58,7 +56,7 @@ body {
 }
 
 .center-cell {
-  margin: auto;
+  margin: 5% auto;
 }
 
 .constrain-text-box {
@@ -110,6 +108,7 @@ body {
 
 
 .ossu-logo {
+    padding-top: 5%;
     height: 100%;
     width: auto;
     display: flex;
@@ -179,7 +178,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  min-height: 300px;
+  max-height: 100%;
 }
 
 

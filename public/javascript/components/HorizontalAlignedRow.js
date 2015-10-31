@@ -9,12 +9,11 @@ export class HorizontalAlignedRow extends React.Component {
 
   render () {
     return (
-      <Cell col={10} phone={12} className='center-cell' id='primary-cards'>
+      <Cell col={10} tablet={8} phone={12} className='center-cell' id='primary-cards'>
         <Grid className='card-container'>
           <ContentBox />
           <ContentBox />
           <ContentBox />
-
         </Grid>
       </Cell>
     );
