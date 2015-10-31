@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
+import Button from 'react-mdl/lib/Button.js';
 
 export class NavButton extends React.Component {
   constructor (props) {
@@ -13,7 +14,9 @@ export class NavButton extends React.Component {
   render () {
     const {linkTo} = this.props;
     return (
-      <Link to={this.getLink(linkTo)} className='navButton item'>{linkTo}</Link>
+      <Link to={this.getLink(linkTo)} className='navButton item'>
+        <Button ripple className='nav-text'>{linkTo}</Button>
+      </Link>
     );
   }
 }
