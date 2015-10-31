@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cell } from 'react-mdl/lib/Grid.js
+import { Cell } from 'react-mdl/lib/Grid.js';
 
 export class VerticalSegmentContent extends React.Component {
   
