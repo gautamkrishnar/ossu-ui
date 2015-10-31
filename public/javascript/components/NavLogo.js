@@ -19,7 +19,7 @@ export class NavLogo extends React.Component {
     else {
       let navLeft = {
       	name: ' ',
-      	picture: '/public/favicons/mstile-70x70.png',
+      	picture: 'favicons/mstile-70x70.png',
       	href: '#',
       	id: 'logo-fade-in-out'
       }
@@ -42,7 +42,7 @@ export class NavLogo extends React.Component {
   render () {
     return (
       <a href='#'><div className='nav-text'>
-        <img id='logo-fad-in-out' className='nav-img' src='/public/favicons/mstile-70x70.png' /><p className='hide-on-mobile nav-text'>  </p>
+        <img id='logo-fad-in-out' className='nav-img' src='favicons/mstile-70x70.png' /><p className='hide-on-mobile nav-text'>  </p>
       </div></a>
     );
   }
