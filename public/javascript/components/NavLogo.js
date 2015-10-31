@@ -42,7 +42,7 @@ export class NavLogo extends React.Component {
   render () {
     return (
       <a href='#'><div className='nav-text'>
-        <img id='logo-fad-in-out' className='nav-img' src='favicons/mstile-70x70.png' /><p className='hide-on-mobile nav-text'>  </p>
+        <img id='logo-fade-in-out' className='nav-img' src='favicons/mstile-70x70.png' /><p className='hide-on-mobile nav-text'>  </p>
       </div></a>
     );
   }
