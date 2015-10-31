@@ -5,6 +5,7 @@ import Reqwest from 'reqwest';
 
 // Import Components
 import {NavBar} from './NavBar.js';
+import {Footer} from './Footer.js';
 
 // Import Actions
 import {
@@ -55,6 +56,7 @@ export class App extends Component {
           state={state}
         />
         {children}
+        <Footer />
       </div>
     );
   }
