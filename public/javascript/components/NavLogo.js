@@ -1,19 +1,14 @@
 import React from 'react';
 
 export class NavLogo extends React.Component {
-  
-    
   isLoggedIn () {
     if (window.localStorage.getItem('jwt')) {
-      
       let token = window.localStorage.getItem('jwt');
-      
       let navLeft = {
       	name: token.name,
       	picture: token.githubAvatar,
       	href: '/user-profile',
       	id: 'user-avatar'
-
       }
       return navLeft;
     }
