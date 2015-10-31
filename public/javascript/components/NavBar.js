@@ -5,16 +5,13 @@ import { Login } from './Login.js';
 import { BodyContent } from './BodyContent.js';
 import Layout, { Header, HeaderRow, HeaderTabs, Drawer, Content } from 'react-mdl/lib/layout/Layout.js';
 
-
 export class NavBar extends React.Component {
   constructor (props) {
     super(props);
   }
 
   handleClick () {
-    
     }
-  
 
   render () {
     const {...other} = this.props;
@@ -24,14 +21,11 @@ export class NavBar extends React.Component {
           <NavButton 
           {...other}
           />
-          
           <Login 
             {...other}
           />
         </Header>
       </Layout>
-
-
     );
   }
 }
