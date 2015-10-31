@@ -22,7 +22,7 @@ export class NavBar extends React.Component {
     return (
       <Layout fixedHeader={true} >
         <Header title= <NavLogo /> className='mdl-layout__header--waterfall' >
-          <NavButton {...other}/>
+          <NavButton linkTo='Home' />
           <NavButton linkTo='About' />
           <Login {...other} />
         </Header>
