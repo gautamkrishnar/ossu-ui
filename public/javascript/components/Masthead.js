@@ -10,7 +10,7 @@ export class Masthead extends React.Component {
              <h2> Univeristy </h2>  
           </div>
           <div className='center-text-box constrain-text-box'>
-              <h3> Path to a free, self-taught education in Computer Science! </h3>
+            <h3> Path to a free, self-taught education in Computer Science! </h3>
           </div>
         </div>  
       </div>
