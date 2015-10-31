@@ -1,9 +1,9 @@
 import React from 'react';
 
 export class NavLogo extends React.Component {
- 
+
  /* Use props instead o local storage to retrieve
- 
+
   isLoggedIn () {
     if (window.localStorage.getItem('jwt')) {
       let token = window.localStorage.getItem('jwt');
@@ -15,7 +15,7 @@ export class NavLogo extends React.Component {
       }
       return navLeft;
     }
-    
+
     else {
       let navLeft = {
       	name: ' ',
@@ -26,8 +26,7 @@ export class NavLogo extends React.Component {
       return navLeft;
     }
   }
-  
-  
+
   render () {
     return (
       <a href={this.isLoggedIn().href}><div className='nav-text'>
@@ -41,9 +40,12 @@ export class NavLogo extends React.Component {
 
   render () {
     return (
-      <a href='#'><div className='nav-text'>
-        <img id='logo-fade-in-out' className='nav-img' src='favicons/mstile-70x70.png' /><p className='hide-on-mobile nav-text'>  </p>
-      </div></a>
+      <a href='#'>
+        <div className='nav-text'>
+          <img id='logo-fade-in-out' className='nav-img' src='favicons/mstile-70x70.png' />
+          <p className='hide-on-mobile nav-text'> </p>
+        </div>
+      </a>
     );
   }
 }
