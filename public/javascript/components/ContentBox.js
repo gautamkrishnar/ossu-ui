@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import Grid, { Cell } from 'react-mdl/lib/Grid.js'
-=======
 import { Cell } from 'react-mdl/lib/Grid.js';
->>>>>>> develop
 
 export class ContentBox extends React.Component {
   render () {
@@ -16,7 +12,7 @@ export class ContentBox extends React.Component {
         <div className='mdl-card__title'>
         <h4 className='mdl-card__title-text'>Github</h4>
         </div>
-        <p> Our curriculum is based around sharing github projects. Don't know what github is? Click to learn more</p>
+        <p> Our curriculum is based around sharing github projects. Don't know what github is? <a href='https://help.github.com/articles/set-up-git/'> Click to learn more </a></p>
       </div>
     </Cell>
     );
