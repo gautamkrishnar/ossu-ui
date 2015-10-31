@@ -9723,4 +9723,8 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
     width: calc(100% - 16px); }
     .mdl-grid--no-spacing > .mdl-cell--12-col,
     .mdl-grid--no-spacing > .mdl-cell--12-col-desktop.mdl-cell--12-col-desktop {
+<<<<<<< HEAD
       width: 100%; } }
+=======
+      width: 100%; } }
+>>>>>>> develop

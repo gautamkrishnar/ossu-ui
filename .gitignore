@@ -5,6 +5,10 @@ jsconfig.json
 tsd.json
 .eslintrc
 npm-debug.log
+<<<<<<< HEAD
+=======
+ossu-ui.*
+>>>>>>> develop
 
 # Because I am a code hoarder
 personal/

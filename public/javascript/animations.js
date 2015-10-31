@@ -1,4 +1,6 @@
-$(document).ready(function() {
+/*global $*/
+
+$(document).ready(function () {
   setTimeout(shadow, 1000);
 });
 

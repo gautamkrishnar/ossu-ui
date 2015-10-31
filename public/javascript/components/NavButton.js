@@ -1,4 +1,7 @@
+
 import React from 'react';
+import React, {PropTypes} from 'react';
+import { Link } from 'react-router';
 import Button from 'react-mdl/lib/Button.js';
 
 export class NavButton extends React.Component {
@@ -6,16 +9,20 @@ export class NavButton extends React.Component {
     super(props);
   }
 
-  handleClick () {
-    // console.log(this.props);
-    return this.props.onCheckClick;
+  getLink (link) {
+    return '/' + link.toLowerCase();
   }
 
   render () {
+    const {linkTo} = this.props;
     return (
-       <a href='#primary-cards' onClick={this.handleClick()}><Button ripple className='nav-text'>
-        A Button!</Button>
-      </a>
+      <Link to={this.getLink(linkTo)} className='navButton item'>
+        <Button ripple className='nav-text'>{linkTo}</Button>
+      </Link>
     );
   }
 }
+
+NavButton.propTypes = {
+  linkTo: PropTypes.string.isRequired
+};
