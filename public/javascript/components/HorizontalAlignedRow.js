@@ -17,7 +17,7 @@ export class HorizontalAlignedRow extends React.Component {
   render () {
     return (
       <Cell col={10} tablet={8} phone={12} className='center-cell' id='primary-cards'>
-        <Grid className='card-container'>
+        <Grid className='card-container cell-width'>
           <ContentBox {...this.getContentProps('moocs')} />
           <ContentBox {...this.getContentProps('github')} />
           <ContentBox {...this.getContentProps('projects')} />

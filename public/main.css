@@ -19,7 +19,7 @@ body {
     font-size: 16px;
     text-decoration: none;
     
-}
+  }
 
 .large-body-text {
   display: table-row;
@@ -34,6 +34,7 @@ body {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
 
 .card-img {
   display: block;
@@ -194,6 +195,10 @@ body {
 }
 
 
+
+
+
+
 /*
  *
  * Animation
@@ -223,6 +228,10 @@ body {
 }
 
 
+
+
+
+
 @media screen and (max-width: 1024px) {
 
   .mdl-layout__header {
@@ -234,7 +243,6 @@ body {
 
 
 }
-
 
 @media (max-width: 900px) {
 
@@ -283,6 +291,8 @@ body {
 }
 
 
+
+
 @media (max-height: 600px) {
 
   .masthead h1 {
@@ -304,4 +314,3 @@ body {
   .masthead {
       height: 300px;
   }
-}

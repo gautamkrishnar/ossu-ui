@@ -10,7 +10,8 @@ export class ContentBox extends React.Component {
 
   render () {
     return (
-      <Cell col={4} tablet={6} phone={12} className='center-cell'>
+      <Cell col={4} tablet={7} phone={12} className='center-cell'>
+       <Cell col={12}>    
         <Card className='cell-width cast-shadow image-card'>
           <div className='mdl-card__media'>
           	<img src={this.props.img} className='card-img' />
@@ -20,7 +21,8 @@ export class ContentBox extends React.Component {
           </CardTitle>
           <CardText  className='card-text'> {this.props.blurb} </CardText> 
           <CardActions linkTo={this.props.link} > {this.props.linkText} </CardActions>
-      </Card>
+        </Card>
+       </Cell>
     </Cell>
     );
   }
