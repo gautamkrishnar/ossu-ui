@@ -16,7 +16,7 @@ export class ContentBox extends React.Component {
           	<img src={this.props.img} className='card-img' />
           </div>
           <CardTitle>
-            <h4 className='mdl-card__title-text'>{this.props.title}</h4>
+            <h3>{this.props.title}</h3>
           </CardTitle>
           <CardText  className='card-text'> {this.props.blurb} </CardText> 
           <CardActions linkTo={this.props.link} > {this.props.linkText} </CardActions>
