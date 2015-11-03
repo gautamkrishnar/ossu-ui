@@ -25,6 +25,7 @@
     "react-transform": "0.0.3",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
+    "semistandard": "^7.0.2",
     "snazzy": "^2.0.1",
     "webpack": "^1.12.2"
   },
