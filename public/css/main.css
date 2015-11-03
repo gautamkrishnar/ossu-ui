@@ -14,14 +14,12 @@ h1, h2, h3 {
   letter-spacing: 0.08rem;
 }
 
-
-
 body {
     background-color: #e5f2fa;
     font-size: 16px;
     text-decoration: none;
     
-  }
+}
 
 .large-body-text {
   display: table-row;
@@ -33,10 +31,9 @@ body {
 .card-container {
   align-items: flex-start;
   width: 100%;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-
 
 .card-img {
   display: block;
@@ -46,19 +43,22 @@ body {
 
 }
 
+.card-text {
+  max-height: 50px;
+  min-height: 50px;
+}
+
 .image-card {
   padding: 2.5%;
-
 }
 
 .cell-width {
   width: 100%;
-  display: flex;
   margin: auto;
 }
 
 .center-cell {
-  margin: auto;
+  margin: 15px auto;
 }
 
 .constrain-text-box {
@@ -102,6 +102,7 @@ body {
 
 
 .masthead h3 {
+   float: bottom;
    position: relative;
    font-size: 1.5rem;
    border-top: 35%;
@@ -110,8 +111,9 @@ body {
 
 
 .ossu-logo {
+    padding-top: 5%;
     height: 100%;
-    width: auto;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,11 +124,19 @@ body {
   backround-color: #fff;
 }
 
+
 .mdl-card__media {
   background-color: #F17972;
   height: 250%;
 }
 
+.mdl-card__title {
+  padding-bottom: 0;
+}
+
+.mdl-card__title h3{
+  margin: 0;
+}
 
 .mdl-grid {
   padding: 0;
@@ -179,12 +189,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  min-height: 300px;
+  max-height: 100%;
 }
-
-
-
-
 
 
 /*
@@ -216,10 +223,6 @@ body {
 }
 
 
-
-
-
-
 @media screen and (max-width: 1024px) {
 
   .mdl-layout__header {
@@ -231,6 +234,7 @@ body {
 
 
 }
+
 
 @media (max-width: 900px) {
 
@@ -272,9 +276,11 @@ body {
     font-size: 1rem;
   }
 
+  .card-text {
+    min-height: 100%;
+  }
+
 }
-
-
 
 
 @media (max-height: 600px) {
@@ -298,3 +304,4 @@ body {
   .masthead {
       height: 300px;
   }
+}
