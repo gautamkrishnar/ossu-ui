@@ -1,17 +1,16 @@
 import React from 'react';
 import { ContentBox } from './ContentBox.js';
 import Grid, { Cell } from 'react-mdl/lib/Grid.js';
-import { ContentBoxData } from './ContentBoxData.js'
-
+import { ContentBoxData } from './ContentBoxData.js';
 
 export class HorizontalAlignedRow extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
   }
 
-
   getContentProps (name) {
-    return this.props = ContentBoxData.getProps(name)
+    this.props = ContentBoxData.getProps(name);
+    return this.props;
   }
 
   render () {

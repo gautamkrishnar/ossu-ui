@@ -25,6 +25,7 @@
     "react-transform": "0.0.3",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
+    "semistandard": "^7.0.2",
     "snazzy": "^2.0.1",
     "webpack": "^1.12.2"
   },
@@ -47,7 +48,6 @@
     "redux-devtools": "^2.1.5",
     "redux-logger": "^2.0.4",
     "redux-router": "^0.1.0",
-    "redux-slider-monitor": "^0.6.2",
     "redux-thunk": "^1.0.0",
     "reqwest": "^2.0.5",
     "webpack": "^1.12.2",
