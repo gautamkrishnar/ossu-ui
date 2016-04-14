@@ -8,6 +8,7 @@
 
   ```bash
   $ git clone git@github.com:open-source-society/ossu-ui.git
+  $ cd ossu-ui
   ```
 
 1. Load the dependencies (via NPM)
